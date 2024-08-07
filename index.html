@@ -54,17 +54,14 @@
 
     </div>
     <script>
-        //   const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MjI5MjEzMDMsImV4cCI6MTcyMjkyODUwMywidXNlcl9pZCI6Ijg2NTkwIiwiZW50ZXJwcmlzZV9pZCI6IjAiLCJncm91cF9pZCI6IjAiLCJtZW51X2lkIjoiMjMxMTIxMTY1NjQ0MDAwMDE1MCIsImNoaWxkX2VudGVycHJpc2VfaWQiOiIwIiwicGVybWlzc2lvbnMiOjAsImlzcyI6ImlgbCIsImF1ZCI6ImEkaCJ9.EdghTCqWfnDjqR2HwLNG3jV2bgazrRpH83cGIsaZWz1N8rj16ciW_zdd7Ko9AZu47F-hhZhU3zS0oD-6lTsDlCvblSF31GEO9dGFptBiwh4ylc9G-vl2Y5Bmydrb0b7stSICppL3Nd9Ab34idGUCcVgcgJOXU5fw-90dUx76NWFN9mLMroX-0N1pldnF138QIHraV8SGSM9mNcCJr5tb1pxqM9WIF1_6hzK3S_GqT7SU0Ebc1hHkDJNfi8hrGB0tKEAyZypQfvutwPE3vaiuAAmhzq_AOdH-_7UIWQcPsNeZ6A-d12-mKYEwbRpAJ2eGbajl5Gh3mesqPzimhYCo6w";
-        //   const decoded = jwtDecode(token);
-        //   console.log(decoded);
         const jwtInput = () => document.querySelector('#jwt-input');
         const jwtOuTput = () => document.querySelector('#jwt-output');
-        const inputToken = (e) => {
+        const inputToken = () => {
             const token = jwtInput().value;
-            const decoded = jwtDecode(token);
-            console.log(JSON.stringify(decoded,null, 2));
-            console.log(jwtOuTput);
-            jwtOuTput().innerHTML = JSON.stringify(decoded, null, 2);
+            if(token){
+                const decoded = jwtDecode(token);
+                jwtOuTput().innerHTML = JSON.stringify(decoded, null, 2);
+            }
         }
 
     </script>
