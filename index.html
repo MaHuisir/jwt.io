@@ -61,6 +61,8 @@
             if(token){
                 const decoded = jwtDecode(token);
                 jwtOuTput().innerHTML = JSON.stringify(decoded, null, 2);
+            }else{
+                 jwtOuTput().innerHTML= '';
             }
         }
 
